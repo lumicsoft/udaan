@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exa Coin - International Mind Power LLP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="overlay" id="overlay"></div>
+
+<div class="sidebar" id="sidebar"></div>
+
+<div class="content">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div class="d-flex align-items-center">
+            <button class="menu-toggle me-3" id="toggleBtn"><i class="fas fa-bars"></i></button>
+            <h5 class="mb-0 fw-bold">User Dashboard</h5>
+        </div>
+        <div class="d-flex align-items-center">
+            <span class="me-2 d-none d-sm-inline small">ID: EXA872435</span>
+            <div class="exa-coin-icon" style="width: 30px; height: 30px; font-size: 14px; margin-right: 0;"><i class="fas fa-user"></i></div>
+        </div>
+    </div>
+
+    <div class="row g-3">
+        <div class="col-lg-8">
+            <div class="dashboard-card welcome-card p-4">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <small class="text-info"><i class="fas fa-sparkles"></i> Welcome back</small>
+                        <h2 class="fw-bold text-white mb-3">vnsdjvxlcj</h2>
+                        <div class="row g-3">
+                            <div class="col-sm-6"><p class="mb-1 small label-text"><i class="fas fa-id-badge"></i> User ID</p><p class="fw-bold mb-0">EXA872435</p></div>
+                            <div class="col-sm-6"><p class="mb-1 small label-text"><i class="fas fa-check-circle"></i> Status</p><span class="status-pill">ACTIVE</span></div>
+                            <div class="col-6"><h4 class="mb-0 fw-bold text-white mt-2">$ 1350</h4><small class="label-text">My Package</small></div>
+                            <div class="col-6"><h4 class="mb-0 fw-bold text-white mt-2">78.4%</h4><small class="label-text">Growth Rate</small></div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center d-none d-md-block">
+                        <img src="https://ui-avatars.com/api/?name=Vnsdjvxlcj&background=00d2ff&color=fff&size=128" class="user-photo shadow">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="dashboard-card text-center d-flex flex-column justify-content-center">
+                <h6 class="mb-2 fw-bold label-text">Referral Link</h6>
+                <div class="referral-input mb-3">http://exacoin.io/register?ref=EXA872435</div>
+                <button class="btn btn-primary w-100 fw-bold btn-sm py-2">COPY YOUR LINK</button>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="dashboard-card capping-box">
+                        <div class="d-flex justify-content-between align-items-center"><span class="label-text">Working Income (3X)</span><span class="fw-bold">65%</span></div>
+                        <div class="cap-progress"><div class="cap-fill" style="width: 65%; background: var(--neon-green);"></div></div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="dashboard-card capping-box">
+                        <div class="d-flex justify-content-between align-items-center"><span class="label-text">Non-Working (2X)</span><span class="fw-bold">40%</span></div>
+                        <div class="cap-progress"><div class="cap-fill" style="width: 40%; background: var(--neon-pink);"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-6"><div class="dashboard-card"><small class="label-text">Direct Income</small><h4 class="fw-bold text-white">$ 450</h4><div class="chart-box"><canvas id="chart1"></canvas></div></div></div>
+        <div class="col-md-3 col-6"><div class="dashboard-card"><small class="label-text">Level Income</small><h4 class="fw-bold text-white">$ 1,200</h4><div class="chart-box"><canvas id="chart2"></canvas></div></div></div>
+        <div class="col-md-3 col-6"><div class="dashboard-card"><small class="label-text">Main Wallet</small><h4 class="fw-bold text-white">$ 3,560</h4><div class="chart-box"><canvas id="chart3"></canvas></div></div></div>
+        <div class="col-md-3 col-6"><div class="dashboard-card"><small class="label-text">Fund Wallet</small><h4 class="fw-bold text-white">$ 280</h4><div class="chart-box"><canvas id="chart4"></canvas></div></div></div>
+
+        <div class="col-lg-8">
+            <div class="dashboard-card">
+                <h6 class="mb-4 fw-bold label-text">Business Summary</h6>
+                <div class="row">
+                    <div class="col-md-6"><div class="summary-item"><div><h5 class="mb-0 fw-bold text-white">$ 1,500</h5><small class="label-text">Today Team</small></div><div class="summary-icon-box"><i class="fas fa-calendar-day"></i></div></div></div>
+                    <div class="col-md-6"><div class="summary-item"><div><h5 class="mb-0 fw-bold text-white">$ 45,000</h5><small class="label-text">Total Business</small></div><div class="summary-icon-box" style="color:var(--neon-green);"><i class="fas fa-chart-line"></i></div></div></div>
+                    <div class="col-md-6"><div class="summary-item"><div><h5 class="mb-0 fw-bold text-white">$ 22,000</h5><small class="label-text">Left Business</small></div><div class="summary-icon-box"><i class="fas fa-arrow-left"></i></div></div></div>
+                    <div class="col-md-6"><div class="summary-item"><div><h5 class="mb-0 fw-bold text-white">$ 23,000</h5><small class="label-text">Right Business</small></div><div class="summary-icon-box" style="color:var(--neon-pink);"><i class="fas fa-arrow-right"></i></div></div></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="dashboard-card">
+                <h6 class="mb-4 fw-bold label-text">Team Progress</h6>
+                <div class="row text-center g-2">
+                    <div class="col-4"><div class="circle-stat">12</div><p class="mt-2 small label-text">Directs</p></div>
+                    <div class="col-4"><div class="circle-stat" style="border-top-color: var(--neon-pink);">08</div><p class="mt-2 small label-text">Active</p></div>
+                    <div class="col-4"><div class="circle-stat" style="border-top-color: #f1c40f;">25</div><p class="mt-2 small label-text">Gen.</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="buyExaModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" id="footer-load"></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    // Header Load
+    fetch('header.html').then(res => res.text()).then(data => {
+        document.getElementById('sidebar').innerHTML = data;
+    });
+    // Footer/Modal Load
+    fetch('footer.html').then(res => res.text()).then(data => {
+        document.getElementById('footer-load').innerHTML = data;
+    });
+</script>
+<script src="script.js"></script>
+</body>
+</html>

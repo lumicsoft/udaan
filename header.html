@@ -1,0 +1,49 @@
+<div class="sidebar-brand d-flex align-items-center">
+    <div class="exa-coin-icon">E</div>
+    <span>EXA COIN<br><small style="font-size: 10px; color: var(--accent-blue);">Int. Mind Power LLP</small></span>
+</div>
+<div class="nav flex-column mt-2">
+    <a href="#" class="nav-link active"><i class="fas fa-home"></i> Dashboard</a>
+    <a href="#" class="nav-link text-warning fw-bold" data-bs-toggle="modal" data-bs-target="#buyExaModal">
+        <i class="fas fa-shopping-cart"></i> Buy EXA Coin
+    </a>
+    <div class="has-submenu" id="accountMenu">
+        <a class="nav-link" onclick="toggleSubmenu('accountMenu')">
+            <i class="fas fa-user-circle"></i> My Account <i class="fas fa-chevron-right"></i>
+        </a>
+        <div class="submenu">
+            <a href="#" class="nav-link"><i class="fas fa-user-edit"></i> Profile</a>
+            <a href="#" class="nav-link"><i class="fas fa-wallet"></i> Wallet Address</a>
+            <a href="#" class="nav-link"><i class="fas fa-lock"></i> Password</a>
+        </div>
+    </div>
+    <a href="#" class="nav-link"><i class="fas fa-check-circle"></i> Activation</a>
+    <a href="#" class="nav-link"><i class="fas fa-arrow-circle-up"></i> Upgrade</a>
+    <a href="#" class="nav-link"><i class="fas fa-sitemap"></i> My Genealogy</a>
+    
+    <div class="has-submenu" id="fundMenu">
+        <a class="nav-link" onclick="toggleSubmenu('fundMenu')">
+            <i class="fas fa-wallet"></i> Fund Wallet <i class="fas fa-chevron-right"></i>
+        </a>
+        <div class="submenu">
+            <a href="#" class="nav-link"><i class="fas fa-plus-circle"></i> Add Fund</a>
+            <a href="#" class="nav-link"><i class="fas fa-history"></i> Add Fund History</a>
+            <a href="#" class="nav-link"><i class="fas fa-exchange-alt"></i> P2P Transfer</a>
+            <a href="#" class="nav-link"><i class="fas fa-receipt"></i> P2P History</a>
+        </div>
+    </div>
+
+    <div class="has-submenu" id="withdrawMenu">
+        <a class="nav-link" onclick="toggleSubmenu('withdrawMenu')">
+            <i class="fas fa-money-bill-wave"></i> Withdrawal <i class="fas fa-chevron-right"></i>
+        </a>
+        <div class="submenu">
+            <a href="#" class="nav-link"><i class="fas fa-hand-holding-usd"></i> Withdraw Now</a>
+            <a href="#" class="nav-link"><i class="fas fa-list-ul"></i> Withdraw History</a>
+        </div>
+    </div>
+
+    <a href="#" class="nav-link"><i class="fas fa-file-alt"></i> Payout Reports</a>
+    <a href="#" class="nav-link"><i class="fas fa-headset"></i> Support</a>
+    <a href="#" class="nav-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
+</div>
