@@ -1,7 +1,11 @@
+/* PREMIUM GLASSY DARK THEME - FULL UPDATE 
+    No White Sections | Professional Crypto/MLM Dashboard
+*/
+
 :root {
     --bg-color: #0b0e2b;
     --sidebar-bg: #11143a;
-    --card-bg: #161a46;
+    --card-bg: rgba(22, 26, 70, 0.4); /* Deep Navy Glass */
     --accent-blue: #00d2ff;
     --text-muted: #a0a5d1;
     --neon-green: #00ffcc;
@@ -13,7 +17,7 @@
 
 body {
     background-color: var(--bg-color);
-    color: white;
+    color: #e0e6ff;
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
     overflow-x: hidden;
@@ -36,159 +40,141 @@ body {
 @media (max-width: 991px) {
     .sidebar { left: -240px; }
     .sidebar.active { left: 0; }
-    .content { margin-left: 0 !important; }
+    .content { margin-left: 0 !important; padding: 15px; }
     .overlay.active { display: block; }
 }
 
-/* --- COMPONENTS --- */
+/* --- PREMIUM CARD & GLASS EFFECTS --- */
 .dashboard-card {
     background: var(--card-bg);
+    backdrop-filter: blur(15px);
     border-radius: 20px; 
     padding: 20px;
     height: 100%;
-    border: 1px solid rgba(255,255,255,0.08);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    transition: transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, background 0.3s ease;
 }
 
-.exa-coin-icon {
-    width: 35px;
-    height: 35px;
-    background: linear-gradient(45deg, #ffd700, #b8860b);
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: #000;
-    font-weight: bold;
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
-    margin-right: 10px;
+.dashboard-card:hover {
+    background: rgba(22, 26, 70, 0.6);
+    transform: translateY(-5px);
 }
 
-/* --- NAVIGATION LINKS --- */
-.nav-link {
-    color: var(--text-muted);
-    padding: 12px 20px;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    text-decoration: none;
-    transition: 0.3s;
-}
-.nav-link:hover, .nav-link.active {
-    color: white;
-    background: rgba(255,255,255,0.05);
-    border-left: 4px solid var(--accent-blue);
-}
-.nav-link i { margin-right: 12px; width: 20px; text-align: center; font-size: 1.1rem; }
-
-/* Submenu Styles */
-.submenu {
-    background: rgba(0, 0, 0, 0.15);
-    display: none;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-.submenu .nav-link { padding-left: 52px; font-size: 13px; border-left: none; }
-.has-submenu.open .submenu { display: block; }
-.has-submenu.open .fa-chevron-right { transform: rotate(90deg); }
-.fa-chevron-right { font-size: 10px; margin-left: auto; transition: 0.3s; }
-
-/* --- PROFILE & MODERN FORMS --- */
 .profile-card {
     border-radius: 24px !important;
-    background: rgba(22, 26, 70, 0.7);
-    backdrop-filter: blur(10px);
 }
 
-.profile-img-container {
-    position: relative;
-    display: inline-block;
-}
-
-.edit-badge {
-    position: absolute;
-    bottom: 5px;
-    right: 5px;
-    background: var(--accent-blue);
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 3px solid var(--sidebar-bg);
-    color: white;
-    font-size: 12px;
-    cursor: pointer;
-}
-
-.form-control-custom {
-    background: rgba(0, 0, 0, 0.2) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    border-radius: 12px !important;
-    color: white !important;
-    padding: 12px 18px !important;
-    transition: all 0.3s ease;
-}
-
-.form-control-custom:focus {
-    border-color: var(--accent-blue) !important;
-    box-shadow: 0 0 15px rgba(0, 210, 255, 0.15) !important;
-    outline: none;
-}
-
-.locked-input {
-    background: rgba(255, 255, 255, 0.03) !important;
-    color: var(--text-muted) !important;
-    cursor: not-allowed !important;
-    border-style: dashed !important;
-}
-
-/* --- MODERN TABLE SYSTEM --- */
+/* --- MODERN TABLE SYSTEM (NO WHITE) --- */
 .table-responsive {
     border-radius: 15px;
     overflow-x: auto;
 }
 
 .table-custom {
-    color: white !important;
+    color: #e0e6ff !important;
     border-collapse: separate !important;
-    border-spacing: 0 10px !important;
+    border-spacing: 0 8px !important; /* Gaps between rows */
 }
 
 .table-custom thead th {
+    background: rgba(0, 210, 255, 0.05);
     border: none;
-    color: var(--text-muted);
+    color: var(--accent-blue);
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 1.2px;
     padding: 15px 20px;
+    border-bottom: 2px solid rgba(0, 210, 255, 0.2) !important;
 }
 
 .table-custom tbody tr {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.02) !important;
     transition: 0.3s ease;
 }
 
 .table-custom tbody tr:hover {
-    background: rgba(255, 255, 255, 0.07);
-    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.07) !important;
 }
 
 .table-custom td {
     padding: 15px 20px;
     vertical-align: middle;
     border: none;
-    font-size: 14px;
+    font-size: 13px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03) !important;
 }
 
 .table-custom td:first-child { border-radius: 12px 0 0 12px; }
 .table-custom td:last-child { border-radius: 0 12px 12px 0; }
 
-/* Status Badges */
+/* --- SLIM MOBILE REPORT TABLE --- */
+@media (max-width: 768px) {
+    .table-custom, .table-custom tbody, .table-custom tr, .table-custom td {
+        display: block;
+        width: 100%;
+    }
+    .table-custom thead { display: none; } 
+
+    .table-custom tbody tr {
+        margin-bottom: 12px;
+        background: rgba(255, 255, 255, 0.03) !important;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 15px;
+        padding: 12px;
+    }
+
+    .table-custom td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 0 !important;
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.05) !important;
+        text-align: right;
+    }
+
+    .table-custom td::before {
+        content: attr(data-label);
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 10px;
+        color: var(--text-muted);
+        float: left;
+        text-align: left;
+    }
+
+    .table-custom td:last-child { border: none !important; }
+}
+
+/* --- BUTTONS & FORMS (DARK MATCHING) --- */
+.form-control-custom {
+    background: rgba(0, 0, 0, 0.3) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 12px !important;
+    color: white !important;
+    padding: 12px 18px !important;
+}
+
+.form-control-custom:focus {
+    border-color: var(--accent-blue) !important;
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.2) !important;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #00d2ff 0%, #00a8ff 100%);
+    border: none;
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 5px 20px rgba(0, 210, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+/* --- STATUS BADGES --- */
 .status-badge {
     padding: 5px 12px;
     border-radius: 50px;
@@ -197,159 +183,30 @@ body {
     text-transform: uppercase;
 }
 
-.bg-pending { background: rgba(255, 193, 7, 0.1); color: #ffc107; border: 1px solid rgba(255, 193, 7, 0.3); }
 .bg-approved { background: rgba(0, 255, 204, 0.1); color: var(--neon-green); border: 1px solid rgba(0, 255, 204, 0.3); }
+.bg-pending { background: rgba(255, 193, 7, 0.1); color: #ffc107; border: 1px solid rgba(255, 193, 7, 0.3); }
 .bg-cancelled { background: rgba(220, 53, 69, 0.1); color: #ff4d4d; border: 1px solid rgba(220, 53, 69, 0.3); }
 
-.screenshot-thumb {
+/* --- UTILS --- */
+.exa-coin-icon {
     width: 35px; height: 35px;
-    border-radius: 8px;
-    object-fit: cover;
-    cursor: pointer;
-    border: 1px solid rgba(255,255,255,0.1);
+    background: linear-gradient(45deg, #ffd700, #b8860b);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center; justify-content: center;
+    color: #000; font-weight: bold;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
 }
-
-/* --- PREMIUM MOBILE REPORT SYSTEM --- */
-.report-card {
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-left: 4px solid var(--accent-blue);
-    border-radius: 16px;
-    padding: 16px;
-    margin-bottom: 12px;
-    position: relative;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.card-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 8px;
-}
-
-.income-amt {
-    font-size: 1.1rem;
-    font-weight: 800;
-    color: var(--neon-green);
-    text-shadow: 0 0 10px rgba(0, 255, 204, 0.2);
-}
-
-.card-label {
-    font-size: 10px;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    font-weight: 700;
-}
-
-.card-value {
-    font-size: 14px;
-    color: white;
-    font-weight: 500;
-}
-
-.mini-badge {
-    padding: 2px 8px;
-    border-radius: 6px;
-    font-size: 9px;
-    font-weight: 700;
-    background: rgba(0, 210, 255, 0.1);
-    color: var(--accent-blue);
-    border: 1px solid rgba(0, 210, 255, 0.2);
-}
-
-/* --- DASHBOARD ELEMENTS --- */
-.label-text {
-    color: var(--accent-blue) !important;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 0.7rem;
-    letter-spacing: 1px;
-}
-
-.welcome-card {
-    background: linear-gradient(135deg, #11143a 0%, #252b6d 100%);
-    position: relative;
-    overflow: hidden;
-    border: 1px solid rgba(0, 210, 255, 0.2);
-}
-
-.user-photo {
-    width: 110px; height: 110px;
-    border-radius: 20px;
-    border: 4px solid rgba(0, 210, 255, 0.3);
-    object-fit: cover;
-}
-
-.status-pill {
-    padding: 4px 12px;
-    border-radius: 50px;
-    font-size: 10px;
-    font-weight: 800;
-    background: rgba(0, 255, 204, 0.1);
-    color: var(--neon-green);
-    border: 1px solid var(--neon-green);
-}
-
-.summary-item {
-    background: var(--glass-bg);
-    border-radius: 15px;
-    padding: 18px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 12px;
-    border: 1px solid rgba(255,255,255,0.05);
-    transition: 0.3s;
-}
-
-.summary-item:hover {
-    background: rgba(255, 255, 255, 0.08);
-    transform: translateY(-2px);
-}
-
-/* --- BUTTONS & UTILS --- */
-.btn-primary {
-    background: linear-gradient(90deg, #00d2ff 0%, #00a8ff 100%);
-    border: none;
-    border-radius: 12px;
-    padding: 10px 20px;
-    font-weight: 600;
-    transition: 0.3s;
-    color: white;
-}
-
-.btn-primary:hover {
-    box-shadow: 0 5px 15px rgba(0, 210, 255, 0.4);
-    transform: translateY(-1px);
-    color: white;
-}
-
-.rounded-pill { border-radius: 50px !important; }
 
 .text-gradient {
     background: linear-gradient(90deg, #00d2ff, #00ffcc);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-weight: bold;
 }
 
-/* --- RESPONSIVE TOGGLE LOGIC --- */
-@media (min-width: 769px) {
-    .mobile-report-view { display: none !important; }
-    .desktop-report-view { display: block !important; }
-}
+.sidebar::-webkit-scrollbar { width: 4px; }
+.sidebar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
 
-@media (max-width: 768px) {
-    .desktop-report-view { display: none !important; }
-    .mobile-report-view { display: block !important; }
-    .content { padding: 15px; }
-    .dashboard-card { border-radius: 15px; padding: 15px; }
-}
-
-/* --- MISC --- */
 .overlay {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
     background: rgba(0,0,0,0.7); display: none; z-index: 1050;
@@ -358,16 +215,3 @@ body {
 
 .menu-toggle { display: none; background: none; border: none; color: white; font-size: 24px; }
 @media (max-width: 991px) { .menu-toggle { display: block; } }
-
-.circle-stat {
-    width: 70px; height: 70px;
-    border: 4px solid #1f224f;
-    border-top: 4px solid var(--accent-blue);
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-weight: bold; font-size: 1.1rem;
-    margin: 0 auto;
-}
-
-.sidebar::-webkit-scrollbar { width: 4px; }
-.sidebar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
