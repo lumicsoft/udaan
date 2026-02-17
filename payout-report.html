@@ -25,121 +25,72 @@
         </div>
     </div>
 
-    <div class="dashboard-card profile-card p-3 mb-4">
+    <div class="dashboard-card p-3 mb-4">
         <div class="row g-2 align-items-center">
             <div class="col-6 col-md-4">
                 <select class="form-control form-control-custom form-select small py-2">
                     <option selected>All Incomes</option>
                     <option>Level Income</option>
                     <option>Direct Income</option>
-                    <option>ROI Income</option>
                 </select>
             </div>
             <div class="col-6 col-md-4">
                 <input type="date" class="form-control form-control-custom small py-2">
             </div>
             <div class="col-12 col-md-4">
-                <button class="btn btn-primary w-100 rounded-pill fw-bold">Apply Filter</button>
+                <button class="btn btn-primary w-100 rounded-pill fw-bold">Filter</button>
             </div>
         </div>
     </div>
 
-    <div class="mobile-report-view">
-        <div class="report-card">
-            <div class="card-row">
-                <div>
-                    <div class="card-label">User From</div>
-                    <div class="card-value d-flex align-items-center">
-                        <div class="exa-coin-icon" style="width: 25px; height: 25px; font-size: 10px; margin-right: 8px;">R</div>
-                        EXA445522 <small class="text-muted ms-1">(Rahul S.)</small>
-                    </div>
-                </div>
-                <div class="income-amt">+$25.00</div>
-            </div>
-            <div class="card-row mt-3">
-                <div>
-                    <span class="mini-badge">LEVEL 2</span>
-                    <span class="ms-2 text-muted" style="font-size: 11px;">17 Feb, 02:30 PM</span>
-                </div>
-                <div class="card-value text-info small fw-bold">Level Matching</div>
-            </div>
-        </div>
-
-        <div class="report-card" style="border-left-color: var(--neon-pink);">
-            <div class="card-row">
-                <div>
-                    <div class="card-label">User From</div>
-                    <div class="card-value d-flex align-items-center">
-                        <div class="exa-coin-icon" style="width: 25px; height: 25px; font-size: 10px; margin-right: 8px;">A</div>
-                        EXA110099 <small class="text-muted ms-1">(Amit Varma)</small>
-                    </div>
-                </div>
-                <div class="income-amt">+$100.00</div>
-            </div>
-            <div class="card-row mt-3">
-                <div>
-                    <span class="mini-badge" style="color: var(--neon-pink); border-color: var(--neon-pink);">DIRECT</span>
-                    <span class="ms-2 text-muted" style="font-size: 11px;">16 Feb, 11:15 AM</span>
-                </div>
-                <div class="card-value text-info small fw-bold">Direct Referral</div>
-            </div>
-        </div>
-
-        <div class="report-card" style="border-left-color: var(--neon-gold);">
-            <div class="card-row">
-                <div>
-                    <div class="card-label">User From</div>
-                    <div class="card-value d-flex align-items-center">
-                        <div class="exa-coin-icon" style="width: 25px; height: 25px; font-size: 10px; margin-right: 8px;">S</div>
-                        EXA778833 <small class="text-muted ms-1">(Suresh K.)</small>
-                    </div>
-                </div>
-                <div class="income-amt">+$10.50</div>
-            </div>
-            <div class="card-row mt-3">
-                <div>
-                    <span class="mini-badge" style="color: var(--neon-gold); border-color: var(--neon-gold);">LEVEL 5</span>
-                    <span class="ms-2 text-muted" style="font-size: 11px;">15 Feb, 09:00 AM</span>
-                </div>
-                <div class="card-value text-info small fw-bold">Level Bonus</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="desktop-report-view">
-        <div class="dashboard-card profile-card p-4">
-            <div class="table-responsive">
-                <table class="table table-custom align-middle">
-                    <thead>
-                        <tr>
-                            <th>Date & Time</th>
-                            <th>User From</th>
-                            <th>Level</th>
-                            <th>Income Type</th>
-                            <th>Amount</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>17 Feb 2026 <br> <small class="text-muted">02:30 PM</small></td>
-                            <td>
-                                <div class="d-flex align-items-center">
-                                    <div class="exa-coin-icon" style="width: 30px; height: 30px; font-size: 10px;">R</div>
-                                    <div class="ms-2">
-                                        <span class="fw-bold">EXA445522</span><br>
-                                        <small class="text-muted">Rahul S.</small>
-                                    </div>
+    <div class="dashboard-card p-0 overflow-hidden"> 
+        <div class="table-responsive">
+            <table class="table table-custom align-middle mb-0">
+                <thead>
+                    <tr>
+                        <th>Date & Time</th>
+                        <th>User From</th>
+                        <th>Level</th>
+                        <th>Income Type</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>17 Feb 2026 <br> <small class="text-muted">02:30 PM</small></td>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <div class="exa-coin-icon" style="width: 25px; height: 25px; font-size: 10px;">R</div>
+                                <div class="ms-2">
+                                    <span class="fw-bold">EXA445522</span><br>
+                                    <small class="text-muted">Rahul S.</small>
                                 </div>
-                            </td>
-                            <td><span class="badge bg-dark border border-secondary px-2">Level 2</span></td>
-                            <td class="small">Level Matching</td>
-                            <td class="text-success fw-bold">+ $ 25.00</td>
-                            <td><span class="status-badge bg-approved">CREDITED</span></td>
-                        </tr>
-                        </tbody>
-                </table>
-            </div>
+                            </div>
+                        </td>
+                        <td><span class="mini-badge">Level 2</span></td>
+                        <td>Level Matching</td>
+                        <td class="text-success fw-bold">+$25.00</td>
+                        <td><span class="status-badge bg-approved">Credited</span></td>
+                    </tr>
+                    <tr>
+                        <td>16 Feb 2026 <br> <small class="text-muted">11:15 AM</small></td>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <div class="exa-coin-icon" style="width: 25px; height: 25px; font-size: 10px;">A</div>
+                                <div class="ms-2">
+                                    <span class="fw-bold">EXA110099</span><br>
+                                    <small class="text-muted">Amit Varma</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td><span class="mini-badge" style="color:var(--neon-pink); border-color:var(--neon-pink);">Direct</span></td>
+                        <td>Direct Referral</td>
+                        <td class="text-success fw-bold">+$100.00</td>
+                        <td><span class="status-badge bg-approved">Credited</span></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
