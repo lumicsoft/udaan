@@ -103,6 +103,28 @@ body {
     backdrop-filter: blur(10px);
 }
 
+.profile-img-container {
+    position: relative;
+    display: inline-block;
+}
+
+.edit-badge {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background: var(--accent-blue);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--sidebar-bg);
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+}
+
 .form-control-custom {
     background: rgba(0, 0, 0, 0.2) !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
@@ -112,51 +134,67 @@ body {
     transition: all 0.3s ease;
 }
 
-/* --- MODERN TABLE SYSTEM (NO WHITE BG) --- */
+.form-control-custom:focus {
+    border-color: var(--accent-blue) !important;
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.15) !important;
+    outline: none;
+}
+
+.locked-input {
+    background: rgba(255, 255, 255, 0.03) !important;
+    color: var(--text-muted) !important;
+    cursor: not-allowed !important;
+    border-style: dashed !important;
+}
+
+/* --- UPDATED: CLEAN TABLE SYSTEM (NO WHITE BG + MOBILE SCROLL) --- */
 .table-responsive {
     border-radius: 15px;
-    overflow-x: auto;
+    overflow-x: auto; /* Horizontal scroll enabled */
+    background: rgba(22, 26, 70, 0.3); /* Transparent background */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    -webkit-overflow-scrolling: touch;
 }
 
 .table-custom {
+    width: 100%;
+    min-width: 750px; /* Mobile par scroll lane ke liye zaroori hai */
     color: white !important;
-    border-collapse: separate !important;
-    border-spacing: 0 10px !important;
+    border-collapse: collapse !important;
 }
 
 .table-custom thead th {
+    background: rgba(0, 210, 255, 0.1); /* Colorful header background */
     border: none;
     color: var(--accent-blue);
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 1.2px;
     padding: 15px 20px;
+    white-space: nowrap; /* Header text kategi nahi */
 }
 
-/* --- UPDATED: Background colored for rows --- */
 .table-custom tbody tr {
-    background: rgba(255, 255, 255, 0.03) !important; /* Glassy Row */
+    background: transparent !important; /* White background removed */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     transition: 0.3s ease;
 }
 
 .table-custom tbody tr:hover {
-    background: rgba(0, 210, 255, 0.08) !important; /* Blue glow on hover */
-    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.05) !important;
 }
 
 .table-custom td {
-    padding: 15px 20px;
+    padding: 12px 20px;
     vertical-align: middle;
     border: none;
-    font-size: 14px;
+    font-size: 13px; /* Clean look ke liye chota word */
+    white-space: nowrap; /* Data ek line me rahega */
 }
-
-.table-custom td:first-child { border-radius: 12px 0 0 12px; }
-.table-custom td:last-child { border-radius: 0 12px 12px 0; }
 
 /* Status Badges */
 .status-badge {
-    padding: 5px 12px;
+    padding: 4px 12px;
     border-radius: 50px;
     font-size: 10px;
     font-weight: 700;
@@ -165,76 +203,73 @@ body {
 
 .bg-pending { background: rgba(255, 193, 7, 0.1); color: #ffc107; border: 1px solid rgba(255, 193, 7, 0.3); }
 .bg-approved { background: rgba(0, 255, 204, 0.1); color: var(--neon-green); border: 1px solid rgba(0, 255, 204, 0.3); }
-
-/* --- PREMIUM MOBILE REPORT (COLORFUL & SMALL TEXT) --- */
-.report-card {
-    background: linear-gradient(145deg, rgba(22, 26, 70, 0.9) 0%, rgba(11, 14, 43, 0.9) 100%) !important;
-    border: 1px solid rgba(0, 210, 255, 0.2);
-    border-left: 4px solid var(--accent-blue);
-    border-radius: 16px;
-    padding: 12px;
-    margin-bottom: 12px;
-    position: relative;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-}
-
-.card-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 6px;
-}
-
-.income-amt {
-    font-size: 1rem; /* Reduced size */
-    font-weight: 800;
-    color: var(--neon-green);
-}
-
-.card-label {
-    font-size: 9px; /* Smaller labels */
-    color: var(--text-muted);
-    text-transform: uppercase;
-    font-weight: 700;
-}
-
-.card-value {
-    font-size: 11px; /* Smaller words for mobile */
-    color: white;
-    font-weight: 500;
-}
+.bg-cancelled { background: rgba(220, 53, 69, 0.1); color: #ff4d4d; border: 1px solid rgba(220, 53, 69, 0.3); }
 
 /* --- DASHBOARD ELEMENTS --- */
+.label-text {
+    color: var(--accent-blue) !important;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+}
+
 .welcome-card {
     background: linear-gradient(135deg, #11143a 0%, #252b6d 100%);
+    position: relative;
+    overflow: hidden;
     border: 1px solid rgba(0, 210, 255, 0.2);
+}
+
+.user-photo {
+    width: 110px; height: 110px;
+    border-radius: 20px;
+    border: 4px solid rgba(0, 210, 255, 0.3);
+    object-fit: cover;
+}
+
+.status-pill {
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 10px;
+    font-weight: 800;
+    background: rgba(0, 255, 204, 0.1);
+    color: var(--neon-green);
+    border: 1px solid var(--neon-green);
 }
 
 .summary-item {
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--glass-bg);
     border-radius: 15px;
     padding: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
     border: 1px solid rgba(255,255,255,0.05);
+    transition: 0.3s;
 }
 
-/* --- MOBILE COMPACT OPTIMIZATION --- */
+/* --- RESPONSIVE OPTIMIZATION --- */
 @media (max-width: 768px) {
-    .content { padding: 12px; }
-    .dashboard-card { border-radius: 15px; padding: 15px; }
-    
-    /* Tables ko bhi mobile par chota dikhane ke liye */
+    .content { padding: 15px; }
     .table-custom td {
-        font-size: 11px !important;
-        padding: 10px 8px !important;
-    }
-    
-    .status-badge {
-        font-size: 8px !important;
-        padding: 3px 8px !important;
+        font-size: 11px !important; /* Mobile par chota text */
+        padding: 10px 15px !important;
     }
 }
 
-/* --- MISC --- */
+/* --- MISC & BUTTONS (SAME AS ORIGINAL) --- */
+.btn-primary {
+    background: linear-gradient(90deg, #00d2ff 0%, #00a8ff 100%);
+    border: none;
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-weight: 600;
+    transition: 0.3s;
+    color: white;
+}
+
 .overlay {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
     background: rgba(0,0,0,0.7); display: none; z-index: 1050;
