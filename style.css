@@ -43,7 +43,7 @@ body {
 /* --- COMPONENTS --- */
 .dashboard-card {
     background: var(--card-bg);
-    border-radius: 20px; /* Enhanced Roundness */
+    border-radius: 20px; 
     padding: 20px;
     height: 100%;
     border: 1px solid rgba(255,255,255,0.08);
@@ -96,7 +96,7 @@ body {
 .has-submenu.open .fa-chevron-right { transform: rotate(90deg); }
 .fa-chevron-right { font-size: 10px; margin-left: auto; transition: 0.3s; }
 
-/* --- PROFILE PAGE SPECIFIC (Modern & Sleek) --- */
+/* --- PROFILE & MODERN FORMS --- */
 .profile-card {
     border-radius: 24px !important;
     background: rgba(22, 26, 70, 0.7);
@@ -125,7 +125,6 @@ body {
     cursor: pointer;
 }
 
-/* Modern Rounded Inputs */
 .form-control-custom {
     background: rgba(0, 0, 0, 0.2) !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
@@ -148,6 +147,68 @@ body {
     border-style: dashed !important;
 }
 
+/* --- MODERN TABLE SYSTEM --- */
+.table-responsive {
+    border-radius: 15px;
+    overflow-x: auto;
+}
+
+.table-custom {
+    color: white !important;
+    border-collapse: separate !important;
+    border-spacing: 0 10px !important;
+}
+
+.table-custom thead th {
+    border: none;
+    color: var(--text-muted);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    padding: 15px 20px;
+}
+
+.table-custom tbody tr {
+    background: rgba(255, 255, 255, 0.03);
+    transition: 0.3s ease;
+}
+
+.table-custom tbody tr:hover {
+    background: rgba(255, 255, 255, 0.07);
+    transform: translateY(-2px);
+}
+
+.table-custom td {
+    padding: 15px 20px;
+    vertical-align: middle;
+    border: none;
+    font-size: 14px;
+}
+
+.table-custom td:first-child { border-radius: 12px 0 0 12px; }
+.table-custom td:last-child { border-radius: 0 12px 12px 0; }
+
+/* Status Badges */
+.status-badge {
+    padding: 5px 12px;
+    border-radius: 50px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.bg-pending { background: rgba(255, 193, 7, 0.1); color: #ffc107; border: 1px solid rgba(255, 193, 7, 0.3); }
+.bg-approved { background: rgba(0, 255, 204, 0.1); color: var(--neon-green); border: 1px solid rgba(0, 255, 204, 0.3); }
+.bg-cancelled { background: rgba(220, 53, 69, 0.1); color: #ff4d4d; border: 1px solid rgba(220, 53, 69, 0.3); }
+
+.screenshot-thumb {
+    width: 35px; height: 35px;
+    border-radius: 8px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
 /* --- DASHBOARD ELEMENTS --- */
 .label-text {
     color: var(--accent-blue) !important;
@@ -165,8 +226,7 @@ body {
 }
 
 .user-photo {
-    width: 110px;
-    height: 110px;
+    width: 110px; height: 110px;
     border-radius: 20px;
     border: 4px solid rgba(0, 210, 255, 0.3);
     object-fit: cover;
@@ -207,11 +267,13 @@ body {
     padding: 10px 20px;
     font-weight: 600;
     transition: 0.3s;
+    color: white;
 }
 
 .btn-primary:hover {
     box-shadow: 0 5px 15px rgba(0, 210, 255, 0.4);
     transform: translateY(-1px);
+    color: white;
 }
 
 .rounded-pill { border-radius: 50px !important; }
