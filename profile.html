@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - EXA COIN</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="overlay" id="overlay"></div>
+
+<div class="sidebar" id="sidebar"></div>
+
+<div class="content">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div class="d-flex align-items-center">
+            <button class="menu-toggle me-3" id="toggleBtn"><i class="fas fa-bars"></i></button>
+            <h5 class="mb-0 fw-bold">My Profile</h5>
+        </div>
+        <div class="d-flex align-items-center">
+            <span class="me-2 d-none d-sm-inline small">ID: EXA872435</span>
+            <div class="exa-coin-icon" style="width: 30px; height: 30px; font-size: 14px; margin-right: 0;"><i class="fas fa-user"></i></div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="dashboard-card p-4">
+                <div class="text-center mb-4">
+                    <img src="https://ui-avatars.com/api/?name=User&background=00d2ff&color=fff&size=100" class="user-photo mb-3">
+                    <h4 class="fw-bold mb-0">Edit Profile Details</h4>
+                    <p class="label-text">Manage your personal information</p>
+                </div>
+
+                <form id="profileForm">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <label class="label-text mb-2">User ID (Locked)</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-dark border-secondary text-muted"><i class="fas fa-lock"></i></span>
+                                <input type="text" class="buy-input" value="EXA872435" readonly style="opacity: 0.6; cursor: not-allowed;">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="label-text mb-2">Full Name</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-dark border-secondary text-info"><i class="fas fa-user"></i></span>
+                                <input type="text" class="buy-input" placeholder="Enter Full Name" value="vnsdjvxlcj">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="label-text mb-2">Mobile Number</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-dark border-secondary text-info"><i class="fas fa-phone"></i></span>
+                                <input type="tel" class="buy-input" placeholder="Enter Mobile Number" value="+91 9876543210">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="label-text mb-2">Email Address</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-dark border-secondary text-info"><i class="fas fa-envelope"></i></span>
+                                <input type="email" class="buy-input" placeholder="Enter Email ID" value="user@exacoin.io">
+                            </div>
+                        </div>
+
+                        <div class="col-12 mt-4 text-center">
+                            <button type="button" class="btn btn-primary px-5 py-2 fw-bold" onclick="alert('Profile Updated Successfully!')">
+                                UPDATE PROFILE
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="buyExaModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" id="footer-load"></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Header Load
+    fetch('header.html').then(res => res.text()).then(data => {
+        document.getElementById('sidebar').innerHTML = data;
+    });
+    // Footer/Modal Load
+    fetch('footer.html').then(res => res.text()).then(data => {
+        document.getElementById('footer-load').innerHTML = data;
+    });
+</script>
+<script src="script.js"></script>
+</body>
+</html>
