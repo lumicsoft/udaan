@@ -11,7 +11,6 @@
 <body>
 
 <div class="overlay" id="overlay"></div>
-
 <div class="sidebar" id="sidebar"></div>
 
 <div class="content">
@@ -20,7 +19,7 @@
             <button class="menu-toggle me-3" id="toggleBtn"><i class="fas fa-bars"></i></button>
             <h5 class="mb-0 fw-bold">User Dashboard</h5>
         </div>
-        <div class="d-flex align-items-center">
+        <div class="d-flex align-items-center" style="cursor: pointer;" onclick="window.location.href='profile.html'">
             <span class="me-2 d-none d-sm-inline small">ID: EXA872435</span>
             <div class="exa-coin-icon" style="width: 30px; height: 30px; font-size: 14px; margin-right: 0;"><i class="fas fa-user"></i></div>
         </div>
@@ -50,8 +49,8 @@
         <div class="col-lg-4">
             <div class="dashboard-card text-center d-flex flex-column justify-content-center">
                 <h6 class="mb-2 fw-bold label-text">Referral Link</h6>
-                <div class="referral-input mb-3">http://exacoin.io/register?ref=EXA872435</div>
-                <button class="btn btn-primary w-100 fw-bold btn-sm py-2">COPY YOUR LINK</button>
+                <div class="referral-input mb-3" id="refLink">http://exacoin.io/register?ref=EXA872435</div>
+                <button class="btn btn-primary w-100 fw-bold btn-sm py-2" onclick="copyRef()">COPY YOUR LINK</button>
             </div>
         </div>
 
@@ -118,7 +117,8 @@
 
 <div class="modal fade" id="buyExaModal" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content" id="footer-load"></div>
+        <div class="modal-content" id="footer-load" style="background: var(--card-bg); border: 1px solid var(--border-color);">
+            </div>
     </div>
 </div>
 
@@ -126,21 +126,33 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
-    // Header Load logic with Active State handling
-    fetch('header.html')
-        .then(res => res.text())
-        .then(data => {
-            document.getElementById('sidebar').innerHTML = data;
-            // Dashboard page par hai isliye Dashboard link ko active karein
-            const dashLink = document.getElementById('nav-dashboard');
-            if(dashLink) dashLink.classList.add('active');
-        });
+    // Master Loader for Header and Footer
+    document.addEventListener('DOMContentLoaded', function() {
+        // Load Sidebar/Header
+        fetch('header.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('sidebar').innerHTML = data;
+                // Activate Dashboard Link
+                if(typeof activateCurrentMenu === "function") {
+                    activateCurrentMenu();
+                }
+            });
 
-    fetch('footer.html')
-        .then(res => res.text())
-        .then(data => {
-            document.getElementById('footer-load').innerHTML = data;
-        });
+        // Load Buy Modal Content (from footer.html)
+        fetch('footer.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('footer-load').innerHTML = data;
+            });
+    });
+
+    // Simple Copy Function
+    function copyRef() {
+        const link = document.getElementById('refLink').innerText;
+        navigator.clipboard.writeText(link);
+        alert("Referral link copied!");
+    }
 </script>
 <script src="script.js"></script>
 </body>
