@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet & Bank Details - EXA COIN</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="overlay" id="overlay"></div>
+<div class="sidebar" id="sidebar"></div>
+
+<div class="content">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div class="d-flex align-items-center">
+            <button class="menu-toggle me-3" id="toggleBtn"><i class="fas fa-bars"></i></button>
+            <h5 class="mb-0 fw-bold text-gradient">Payment Settings</h5>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-12">
+            <div class="dashboard-card profile-card p-4">
+                <h6 class="fw-bold mb-4 text-warning"><i class="fas fa-wallet me-2"></i>Crypto Wallet Address</h6>
+                <form class="row g-3 align-items-end">
+                    <div class="col-md-9">
+                        <label class="small label-text mb-2">USDT (BEP-20) / EXA Wallet Address</label>
+                        <input type="text" class="form-control form-control-custom" placeholder="0x..." value="0x71C7656EC7ab88b098defB751B7401B5f6d8976F">
+                    </div>
+                    <div class="col-md-3">
+                        <button type="button" class="btn btn-primary w-100 rounded-pill fw-bold py-2">UPDATE WALLET</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="dashboard-card profile-card p-4">
+                <h6 class="fw-bold mb-4 text-info"><i class="fas fa-university me-2"></i>Bank & UPI Details</h6>
+                
+                <form class="row g-3">
+                    <div class="col-md-6">
+                        <label class="small label-text mb-2">Account Holder Name</label>
+                        <input type="text" class="form-control form-control-custom" placeholder="As per bank passbook">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="small label-text mb-2">Account Number</label>
+                        <input type="text" class="form-control form-control-custom" placeholder="Enter account number">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="small label-text mb-2">Bank Name</label>
+                        <input type="text" class="form-control form-control-custom" placeholder="e.g. SBI, HDFC">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="small label-text mb-2">IFSC Code</label>
+                        <input type="text" class="form-control form-control-custom" placeholder="SBIN0001234">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="small label-text mb-2">Account Type</label>
+                        <select class="form-control form-control-custom form-select">
+                            <option>Savings Account</option>
+                            <option>Current Account</option>
+                        </select>
+                    </div>
+
+                    <div class="col-12 mt-4">
+                        <h6 class="small fw-bold text-muted text-uppercase mb-3" style="letter-spacing: 2px;">UPI Information</h6>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="small label-text mb-2">PhonePe Number / UPI ID</label>
+                        <input type="text" class="form-control form-control-custom" placeholder="9876543210@ybl">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="small label-text mb-2">Google Pay Number / UPI ID</label>
+                        <input type="text" class="form-control form-control-custom" placeholder="9876543210@okaxis">
+                    </div>
+
+                    <div class="col-12 mt-5 text-end">
+                        <hr class="opacity-10">
+                        <button type="button" class="btn btn-primary px-5 rounded-pill fw-bold text-white">SAVE BANK DETAILS</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Load Sidebar and set Active State
+    fetch('header.html').then(res => res.text()).then(data => {
+        document.getElementById('sidebar').innerHTML = data;
+        setTimeout(() => {
+            const walletLink = document.getElementById('nav-wallet'); // Make sure this ID exists in header.html
+            if(walletLink) walletLink.classList.add('active');
+            
+            const parentMenu = document.getElementById('accountMenu');
+            if(parentMenu) parentMenu.classList.add('open');
+        }, 100);
+    });
+</script>
+<script src="script.js"></script>
+</body>
+</html>
