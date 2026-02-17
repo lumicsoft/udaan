@@ -32,7 +32,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-8">
                         <small class="text-info"><i class="fas fa-sparkles"></i> Welcome back</small>
-                        <h2 class="fw-bold text-white mb-3">Anil kumar</h2>
+                        <h2 class="fw-bold text-white mb-3">Anil Kumar</h2>
                         <div class="row g-3">
                             <div class="col-sm-6"><p class="mb-1 small label-text"><i class="fas fa-id-badge"></i> User ID</p><p class="fw-bold mb-0">EXA872435</p></div>
                             <div class="col-sm-6"><p class="mb-1 small label-text"><i class="fas fa-check-circle"></i> Status</p><span class="status-pill">ACTIVE</span></div>
@@ -41,7 +41,7 @@
                         </div>
                     </div>
                     <div class="col-md-4 text-center d-none d-md-block">
-                        <img src="https://ui-avatars.com/api/?name=Vnsdjvxlcj&background=00d2ff&color=fff&size=128" class="user-photo shadow">
+                        <img src="https://ui-avatars.com/api/?name=Anil+Kumar&background=00d2ff&color=fff&size=128" class="user-photo shadow">
                     </div>
                 </div>
             </div>
@@ -104,46 +104,15 @@
             <div class="dashboard-card">
                 <h6 class="mb-4 fw-bold label-text">Income Overview</h6>
                 <div class="row g-3">
-                    <div class="col-md-4 col-sm-6">
-                        <div class="summary-item">
-                            <div><h5 class="mb-0 fw-bold text-white">$ 450</h5><small class="label-text">Direct Income</small></div>
-                            <div class="summary-icon-box" style="color: var(--neon-green);"><i class="fas fa-user-plus"></i></div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="summary-item">
-                            <div><h5 class="mb-0 fw-bold text-white">$ 1,200</h5><small class="label-text">Level Income</small></div>
-                            <div class="summary-icon-box" style="color: var(--accent-blue);"><i class="fas fa-layer-group"></i></div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="summary-item">
-                            <div><h5 class="mb-0 fw-bold text-white">$ 850</h5><small class="label-text">Matching Income</small></div>
-                            <div class="summary-icon-box" style="color: var(--neon-pink);"><i class="fas fa-users-rectangle"></i></div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="summary-item">
-                            <div><h5 class="mb-0 fw-bold text-white">$ 320</h5><small class="label-text">Sponsor Matching</small></div>
-                            <div class="summary-icon-box" style="color: var(--neon-gold);"><i class="fas fa-handshake"></i></div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="summary-item">
-                            <div><h5 class="mb-0 fw-bold text-white">$ 1,000</h5><small class="label-text">Reward Income</small></div>
-                            <div class="summary-icon-box" style="color: #ff4757;"><i class="fas fa-gift"></i></div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="summary-item">
-                            <div><h5 class="mb-0 fw-bold text-white">$ 140</h5><small class="label-text">ROI Income</small></div>
-                            <div class="summary-icon-box" style="color: #2ed573;"><i class="fas fa-chart-pie"></i></div>
-                        </div>
-                    </div>
+                    <div class="col-md-4 col-sm-6"><div class="summary-item"><div><h5 class="mb-0 fw-bold text-white">$ 450</h5><small class="label-text">Direct Income</small></div><div class="summary-icon-box" style="color: var(--neon-green);"><i class="fas fa-user-plus"></i></div></div></div>
+                    <div class="col-md-4 col-sm-6"><div class="summary-item"><div><h5 class="mb-0 fw-bold text-white">$ 1,200</h5><small class="label-text">Level Income</small></div><div class="summary-icon-box" style="color: var(--accent-blue);"><i class="fas fa-layer-group"></i></div></div></div>
+                    <div class="col-md-4 col-sm-6"><div class="summary-item"><div><h5 class="mb-0 fw-bold text-white">$ 850</h5><small class="label-text">Matching Income</small></div><div class="summary-icon-box" style="color: var(--neon-pink);"><i class="fas fa-users-rectangle"></i></div></div></div>
+                    <div class="col-md-4 col-sm-6"><div class="summary-item"><div><h5 class="mb-0 fw-bold text-white">$ 320</h5><small class="label-text">Sponsor Matching</small></div><div class="summary-icon-box" style="color: var(--neon-gold);"><i class="fas fa-handshake"></i></div></div></div>
+                    <div class="col-md-4 col-sm-6"><div class="summary-item"><div><h5 class="mb-0 fw-bold text-white">$ 1,000</h5><small class="label-text">Reward Income</small></div><div class="summary-icon-box" style="color: #ff4757;"><i class="fas fa-gift"></i></div></div></div>
+                    <div class="col-md-4 col-sm-6"><div class="summary-item"><div><h5 class="mb-0 fw-bold text-white">$ 140</h5><small class="label-text">ROI Income</small></div><div class="summary-icon-box" style="color: #2ed573;"><i class="fas fa-chart-pie"></i></div></div></div>
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 
@@ -157,14 +126,22 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
-    fetch('header.html').then(res => res.text()).then(data => {
-        document.getElementById('sidebar').innerHTML = data;
-    });
-    fetch('footer.html').then(res => res.text()).then(data => {
-        document.getElementById('footer-load').innerHTML = data;
-    });
+    // Header Load logic with Active State handling
+    fetch('header.html')
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById('sidebar').innerHTML = data;
+            // Dashboard page par hai isliye Dashboard link ko active karein
+            const dashLink = document.getElementById('nav-dashboard');
+            if(dashLink) dashLink.classList.add('active');
+        });
+
+    fetch('footer.html')
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById('footer-load').innerHTML = data;
+        });
 </script>
 <script src="script.js"></script>
 </body>
 </html>
-
