@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Profile - EXA COIN</title>
+    <title>My Profile - EXA COIN</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -11,68 +11,66 @@
 <body>
 
 <div class="overlay" id="overlay"></div>
-
 <div class="sidebar" id="sidebar"></div>
 
 <div class="content">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <div class="d-flex align-items-center">
             <button class="menu-toggle me-3" id="toggleBtn"><i class="fas fa-bars"></i></button>
-            <h5 class="mb-0 fw-bold">My Profile</h5>
-        </div>
-        <div class="d-flex align-items-center">
-            <span class="me-2 d-none d-sm-inline small">ID: EXA872435</span>
-            <div class="exa-coin-icon" style="width: 30px; height: 30px; font-size: 14px; margin-right: 0;"><i class="fas fa-user"></i></div>
+            <h5 class="mb-0 fw-bold text-gradient">Profile Settings</h5>
         </div>
     </div>
 
-    <div class="row justify-content-center">
-        <div class="col-lg-8">
-            <div class="dashboard-card p-4">
-                <div class="text-center mb-4">
-                    <img src="https://ui-avatars.com/api/?name=User&background=00d2ff&color=fff&size=100" class="user-photo mb-3">
-                    <h4 class="fw-bold mb-0">Edit Profile Details</h4>
-                    <p class="label-text">Manage your personal information</p>
+    <div class="row g-4">
+        <div class="col-xl-4 col-lg-5">
+            <div class="dashboard-card profile-card text-center p-5">
+                <div class="profile-img-container mb-3">
+                    <img src="https://ui-avatars.com/api/?name=Anil+Kumar&background=00d2ff&color=fff&size=120" class="rounded-circle shadow-lg border border-3 border-info">
+                    <div class="edit-badge"><i class="fas fa-camera"></i></div>
                 </div>
+                <h4 class="fw-bold text-white mb-1">Anil Kumar</h4>
+                <p class="text-info small mb-4">Member ID: EXA872435</p>
+                
+                <div class="d-flex justify-content-around border-top border-secondary pt-4 mt-2">
+                    <div>
+                        <h6 class="mb-0 text-white small">Status</h6>
+                        <span class="status-pill mt-1 d-inline-block">ACTIVE</span>
+                    </div>
+                    <div>
+                        <h6 class="mb-0 text-white small">Joined</h6>
+                        <small class="label-text">Oct 2025</small>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                <form id="profileForm">
-                    <div class="row g-4">
-                        <div class="col-md-6">
-                            <label class="label-text mb-2">User ID (Locked)</label>
-                            <div class="input-group">
-                                <span class="input-group-text bg-dark border-secondary text-muted"><i class="fas fa-lock"></i></span>
-                                <input type="text" class="buy-input" value="EXA872435" readonly style="opacity: 0.6; cursor: not-allowed;">
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <label class="label-text mb-2">Full Name</label>
-                            <div class="input-group">
-                                <span class="input-group-text bg-dark border-secondary text-info"><i class="fas fa-user"></i></span>
-                                <input type="text" class="buy-input" placeholder="Enter Full Name" value="vnsdjvxlcj">
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <label class="label-text mb-2">Mobile Number</label>
-                            <div class="input-group">
-                                <span class="input-group-text bg-dark border-secondary text-info"><i class="fas fa-phone"></i></span>
-                                <input type="tel" class="buy-input" placeholder="Enter Mobile Number" value="+91 9876543210">
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <label class="label-text mb-2">Email Address</label>
-                            <div class="input-group">
-                                <span class="input-group-text bg-dark border-secondary text-info"><i class="fas fa-envelope"></i></span>
-                                <input type="email" class="buy-input" placeholder="Enter Email ID" value="user@exacoin.io">
-                            </div>
-                        </div>
-
-                        <div class="col-12 mt-4 text-center">
-                            <button type="button" class="btn btn-primary px-5 py-2 fw-bold" onclick="alert('Profile Updated Successfully!')">
-                                UPDATE PROFILE
-                            </button>
+        <div class="col-xl-8 col-lg-7">
+            <div class="dashboard-card profile-card p-4">
+                <h6 class="fw-bold mb-4"><i class="fas fa-user-cog me-2 text-info"></i>Personal Information</h6>
+                
+                <form class="row g-3">
+                    <div class="col-md-6">
+                        <label class="small label-text mb-2">User ID (Locked)</label>
+                        <input type="text" class="form-control form-control-custom locked-input" value="EXA872435" readonly>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="small label-text mb-2">Full Name</label>
+                        <input type="text" class="form-control form-control-custom" value="Anil Kumar">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="small label-text mb-2">Mobile Number</label>
+                        <input type="text" class="form-control form-control-custom" value="+91 9876543210">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="small label-text mb-2">Email Address</label>
+                        <input type="email" class="form-control form-control-custom" value="anil.kumar@example.com">
+                    </div>
+                    
+                    <div class="col-12 mt-5">
+                        <hr class="opacity-10 border-white">
+                        <div class="d-flex justify-content-end gap-2">
+                            <button type="button" class="btn btn-outline-secondary px-4 rounded-pill text-white border-secondary">Cancel</button>
+                            <button type="button" class="btn btn-primary px-5 rounded-pill fw-bold text-white">Save Changes</button>
                         </div>
                     </div>
                 </form>
@@ -89,11 +87,18 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-    // Header Load
+    // Load Header and handle active states
     fetch('header.html').then(res => res.text()).then(data => {
         document.getElementById('sidebar').innerHTML = data;
+        setTimeout(() => {
+            const profLink = document.getElementById('nav-profile');
+            if(profLink) profLink.classList.add('active');
+            const parentMenu = document.getElementById('accountMenu');
+            if(parentMenu) parentMenu.classList.add('open');
+        }, 100);
     });
-    // Footer/Modal Load
+
+    // Load Footer/Modal
     fetch('footer.html').then(res => res.text()).then(data => {
         document.getElementById('footer-load').innerHTML = data;
     });
