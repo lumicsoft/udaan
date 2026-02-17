@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Withdraw Funds - EXA COIN</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="overlay" id="overlay"></div>
+<div class="sidebar" id="sidebar"></div>
+
+<div class="content">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div class="d-flex align-items-center">
+            <button class="menu-toggle me-3" id="toggleBtn"><i class="fas fa-bars"></i></button>
+            <h5 class="mb-0 fw-bold text-gradient">Withdrawal Request</h5>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8">
+            <div class="dashboard-card welcome-card p-4 mb-4 text-center">
+                <p class="small text-uppercase mb-1" style="color: rgba(255,255,255,0.7); letter-spacing: 1px;">Available Main Balance</p>
+                <h2 class="fw-bold text-white mb-0">$ 4,850.50</h2>
+            </div>
+
+            <div class="dashboard-card profile-card p-4">
+                <div class="text-center mb-4">
+                    <div class="summary-icon-box mx-auto mb-3" style="width: 60px; height: 60px; font-size: 1.5rem; color: var(--neon-pink); background: rgba(255, 0, 255, 0.1);">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h6 class="fw-bold text-white">Cash Out Your Earnings</h6>
+                </div>
+
+                <form class="row g-3">
+                    <div class="col-12">
+                        <label class="small label-text mb-2">Member User ID</label>
+                        <input type="text" class="form-control form-control-custom locked-input" value="EXA872435" readonly>
+                    </div>
+
+                    <div class="col-12">
+                        <label class="small label-text mb-2">Withdrawal Amount ($)</label>
+                        <div class="input-group">
+                            <span class="input-group-text form-control-custom border-end-0" style="background: rgba(0,0,0,0.2);">$</span>
+                            <input type="number" class="form-control form-control-custom border-start-0" id="withdrawAmount" placeholder="Enter amount (Min. $20)">
+                        </div>
+                        <small class="text-muted" style="font-size: 10px;">5% Admin fee will be deducted on withdrawal.</small>
+                    </div>
+
+                    <div class="col-12">
+                        <label class="small label-text mb-2">Transaction Password</label>
+                        <input type="password" class="form-control form-control-custom" placeholder="Enter your 6-digit PIN">
+                    </div>
+
+                    <div class="col-12 mt-4">
+                        <button type="button" class="btn btn-primary w-100 rounded-pill fw-bold py-3" onclick="confirmWithdrawal()">
+                            SUBMIT WITHDRAWAL <i class="fas fa-arrow-right ms-2"></i>
+                        </button>
+                    </div>
+                </form>
+
+                <div class="mt-4 p-3 rounded-3" style="background: rgba(0, 210, 255, 0.05); border: 1px dashed rgba(0, 210, 255, 0.2);">
+                    <small class="text-info d-block mb-1"><i class="fas fa-shield-alt me-1"></i> Note:</small>
+                    <ul class="text-muted mb-0 ps-3" style="font-size: 11px;">
+                        <li>Amount aapke saved Bank/Wallet address par bheja jayega.</li>
+                        <li>Approval time: 24 to 48 working hours.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="withdrawModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content profile-card border-0">
+            <div class="modal-body text-center p-5">
+                <div class="mb-4">
+                    <i class="fas fa-check-circle text-success" style="font-size: 70px; filter: drop-shadow(0 0 10px rgba(0, 255, 204, 0.3));"></i>
+                </div>
+                <h4 class="fw-bold text-white mb-2">Request Submitted!</h4>
+                <p class="text-muted small">Your withdrawal request has been submitted successfully.</p>
+                
+                <div class="p-3 rounded-4 mt-4" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05);">
+                    <div class="d-flex justify-content-between mb-2">
+                        <span class="small text-muted">User ID:</span>
+                        <span class="small fw-bold text-info">EXA872435</span>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <span class="small text-muted">Amount Requested:</span>
+                        <span class="small fw-bold text-success" id="popWithdrawAmount">$ 0.00</span>
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <button type="button" class="btn btn-primary rounded-pill px-5 fw-bold" data-bs-dismiss="modal">GREAT!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Header Load
+    fetch('header.html').then(res => res.text()).then(data => {
+        document.getElementById('sidebar').innerHTML = data;
+    });
+
+    function confirmWithdrawal() {
+        const amt = document.getElementById('withdrawAmount').value;
+        if(amt === "" || amt <= 0) {
+            alert("Please enter a valid amount");
+            return;
+        }
+        document.getElementById('popWithdrawAmount').innerText = "$ " + amt + ".00";
+        var myModal = new bootstrap.Modal(document.getElementById('withdrawModal'));
+        myModal.show();
+    }
+</script>
+<script src="script.js"></script>
+</body>
+</html>
