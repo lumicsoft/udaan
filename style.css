@@ -151,12 +151,14 @@ body {
 .table-responsive {
     border-radius: 15px;
     overflow-x: auto;
+    background: transparent; /* White background remove karne ke liye */
 }
 
 .table-custom {
-    color: blue !important;
+    color: white !important; /* Blue se white kiya */
     border-collapse: separate !important;
     border-spacing: 0 10px !important;
+    background: transparent !important;
 }
 
 .table-custom thead th {
@@ -169,12 +171,12 @@ body {
 }
 
 .table-custom tbody tr {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.03) !important; /* Translucent background */
     transition: 0.3s ease;
 }
 
 .table-custom tbody tr:hover {
-    background: rgba(255, 255, 255, 0.07);
+    background: rgba(255, 255, 255, 0.07) !important;
     transform: translateY(-2px);
 }
 
@@ -183,6 +185,7 @@ body {
     vertical-align: middle;
     border: none;
     font-size: 14px;
+    color: white !important;
 }
 
 .table-custom td:first-child { border-radius: 12px 0 0 12px; }
@@ -201,12 +204,27 @@ body {
 .bg-approved { background: rgba(0, 255, 204, 0.1); color: var(--neon-green); border: 1px solid rgba(0, 255, 204, 0.3); }
 .bg-cancelled { background: rgba(220, 53, 69, 0.1); color: #ff4d4d; border: 1px solid rgba(220, 53, 69, 0.3); }
 
-.screenshot-thumb {
-    width: 35px; height: 35px;
-    border-radius: 8px;
-    object-fit: cover;
-    cursor: pointer;
-    border: 1px solid rgba(255,255,255,0.1);
+/* --- MOBILE REPORT SYSTEM UPDATED --- */
+@media (max-width: 768px) {
+    .table-custom td {
+        padding: 10px 12px !important; /* Height choti karne ke liye padding kam ki */
+        font-size: 12px !important; /* Mobile font size */
+    }
+    
+    .table-custom thead th {
+        padding: 10px 12px !important;
+        font-size: 10px !important;
+    }
+
+    .exa-coin-icon {
+        width: 25px !important;
+        height: 25px !important;
+        font-size: 10px !important;
+    }
+
+    .dashboard-card { 
+        padding: 12px !important; /* Card ki height bhi control hogi */
+    }
 }
 
 /* --- PREMIUM MOBILE REPORT SYSTEM --- */
@@ -269,47 +287,6 @@ body {
     letter-spacing: 1px;
 }
 
-.welcome-card {
-    background: linear-gradient(135deg, #11143a 0%, #252b6d 100%);
-    position: relative;
-    overflow: hidden;
-    border: 1px solid rgba(0, 210, 255, 0.2);
-}
-
-.user-photo {
-    width: 110px; height: 110px;
-    border-radius: 20px;
-    border: 4px solid rgba(0, 210, 255, 0.3);
-    object-fit: cover;
-}
-
-.status-pill {
-    padding: 4px 12px;
-    border-radius: 50px;
-    font-size: 10px;
-    font-weight: 800;
-    background: rgba(0, 255, 204, 0.1);
-    color: var(--neon-green);
-    border: 1px solid var(--neon-green);
-}
-
-.summary-item {
-    background: var(--glass-bg);
-    border-radius: 15px;
-    padding: 18px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 12px;
-    border: 1px solid rgba(255,255,255,0.05);
-    transition: 0.3s;
-}
-
-.summary-item:hover {
-    background: rgba(255, 255, 255, 0.08);
-    transform: translateY(-2px);
-}
-
 /* --- BUTTONS & UTILS --- */
 .btn-primary {
     background: linear-gradient(90deg, #00d2ff 0%, #00a8ff 100%);
@@ -327,8 +304,6 @@ body {
     color: white;
 }
 
-.rounded-pill { border-radius: 50px !important; }
-
 .text-gradient {
     background: linear-gradient(90deg, #00d2ff, #00ffcc);
     -webkit-background-clip: text;
@@ -337,19 +312,11 @@ body {
 }
 
 /* --- RESPONSIVE TOGGLE LOGIC --- */
-@media (min-width: 769px) {
-    .mobile-report-view { display: none !important; }
-    .desktop-report-view { display: block !important; }
-}
-
 @media (max-width: 768px) {
-    .desktop-report-view { display: none !important; }
-    .mobile-report-view { display: block !important; }
     .content { padding: 15px; }
-    .dashboard-card { border-radius: 15px; padding: 15px; }
+    .dashboard-card { border-radius: 15px; }
 }
 
-/* --- MISC --- */
 .overlay {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
     background: rgba(0,0,0,0.7); display: none; z-index: 1050;
@@ -358,16 +325,6 @@ body {
 
 .menu-toggle { display: none; background: none; border: none; color: white; font-size: 24px; }
 @media (max-width: 991px) { .menu-toggle { display: block; } }
-
-.circle-stat {
-    width: 70px; height: 70px;
-    border: 4px solid #1f224f;
-    border-top: 4px solid var(--accent-blue);
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-weight: bold; font-size: 1.1rem;
-    margin: 0 auto;
-}
 
 .sidebar::-webkit-scrollbar { width: 4px; }
 .sidebar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
